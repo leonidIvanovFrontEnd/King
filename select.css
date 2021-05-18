@@ -1,0 +1,133 @@
+.select {
+	position: relative;
+	font-family: "Circe" !important;
+	min-height: 30px;
+}
+
+.select__item {
+	position: relative;
+}
+
+.select__title {
+	color: #727272;
+	font-weight: 500;
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+	text-align: right;
+}
+
+.select__value {
+	display: flex;
+	font-size: 15px;
+	height: 30px;
+	width: 167px;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 15px;
+	text-align: right;
+}
+
+.select__value span {
+	height: 1.2em;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	font-size: 15px;
+	font-family: "Circe" !important;
+	margin-top: 0px;
+	position: relative;
+
+
+}
+
+.select__value span:before {
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #727272;
+	transform-origin: right;
+	transition: .25s;
+}
+
+.select__value span:hover:before {
+	transform: scaleX(0);
+}
+
+.select__value::after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 53%;
+	margin-top: -2px;
+	width: 8px;
+	height: 1px;
+	background: #727272;
+	transform: translateX(3px) rotate(-45deg);
+	transition: .25s;
+}
+
+.select__value::before {
+	content: '';
+	transition: .25s;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 53%;
+	margin-top: -2px;
+	width: 8px;
+	height: 1px;
+	background: #727272;
+	transform: translateX(-3px) rotate(45deg);
+}
+
+.select__options {
+	color: #727272;
+	font-weight: 500;
+	background-color: #fff;
+	display: none;
+	z-index: 2;
+	position: absolute;
+	top: 29px;
+	border-radius: 0 0 4px 4px;
+	min-width: 100%;
+	left: 0;
+	font-size: 15px;
+	padding: 5px 5px 5px 5px;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.select__option {
+	cursor: pointer;
+	padding: 10px 10px;
+	margin: 0px 0px 0px 0px;
+	transition: .25s;
+
+
+}
+
+.select__option:hover {
+	color: #002cba;
+}
+
+.select._active {
+	z-index: 5;
+}
+
+.select._active .select__value::before {
+	transform: translateX(-3px) rotate(-45deg);
+}
+
+.select._active .select__value::after {
+	transform: translateX(3px) rotate(45deg);
+}
+
+.select._active.select__options {
+	display: block;
+}

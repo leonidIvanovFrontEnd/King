@@ -1,0 +1,129 @@
+.select {
+  position: relative;
+  font-family: 'TT Firs Neue' !important;
+  min-height: 54px;
+  height: 54px;
+  width: 100%;
+  border: 2px solid #bebebe;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.select__item {
+  position: relative;
+}
+
+.select__title {
+  color: #727272;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.select__value {
+  display: flex;
+  font-size: 15px;
+  height: 49px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.select__value span {
+  height: 1.2em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 19px;
+  font-weight: 500;
+  color: #666;
+  font-family: 'TT Firs Neue' !important;
+  margin-top: 0px;
+  position: relative;
+
+
+}
+
+
+
+.select__value::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  top: 53%;
+  margin-top: -1px;
+  width: 10px;
+  height: 2px;
+  border-radius: 50px;
+  background: #666;
+  transform: translateX(3px) rotate(-45deg) scale(1.2);
+  transition: .25s;
+}
+
+.select__value::before {
+  content: '';
+  transition: .25s;
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  top: 53%;
+  margin-top: -1px;
+  width: 10px;
+  height: 2px;
+  background: #666;
+  transform: translateX(-4px) rotate(45deg) scale(1.2);
+}
+
+.select__options {
+  color: #727272;
+  font-weight: 500;
+  background-color: #fff;
+  display: none;
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  border-radius: 0 0 3px 3px;
+  min-width: calc(100% + 4px);
+  left: -2px;
+  font-size: 19px;
+  padding: 0px 5px 0px 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 2px solid #bebebe;
+}
+
+.select__option {
+  cursor: pointer;
+  padding: 15px 10px;
+  margin: 0px 0px 0px 0px;
+  transition: .1s;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.select__option:hover {
+  background: #002cba;
+  color: #fff;
+  border-radius: 3px;
+  transform: scale(1.035);
+}
+
+.select._active {
+  z-index: 5;
+}
+
+.select._active .select__value::before {
+  transform: translateX(-4px) rotate(-45deg) scale(1.2);
+}
+
+.select._active .select__value::after {
+  transform: translateX(3px) rotate(45deg) scale(1.2);
+}
+
+.select._active.select__options {
+  display: block;
+}
